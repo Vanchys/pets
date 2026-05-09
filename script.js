@@ -1,3 +1,11 @@
+let totalTrips = 0;
+
+// INICIAR APLICACIÓN
+function startApp() {
+  const splash = document.getElementById('splash-screen');
+  splash.classList.add('hidden');
+}
+
 const petData = {
   'a': { 
     name: 'FERRO', 
@@ -38,7 +46,6 @@ let registry = {
 let activeGroup = null;
 let viewingGroup = 'a';
 let clickCount = 0;
-let totalTrips = 0;
 
 function handleNavClick(group) {
   if (viewingGroup === group) {
