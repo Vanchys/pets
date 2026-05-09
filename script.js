@@ -149,8 +149,9 @@ function completeTrip() {
       }
 
       const img = document.getElementById('pet-img');
-      img.style.filter = 'brightness(3)';
-      setTimeout(() => img.style.filter = 'drop-shadow(0 0 15px var(--primary))', 150);
+      img.classList.remove('epic-enter');
+      void img.offsetWidth; // Trigger reflow
+      img.classList.add('epic-enter');
     }
     render();
   }

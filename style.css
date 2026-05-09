@@ -180,3 +180,15 @@ body {
 
 .float { animation: floating 4s ease-in-out infinite; }
 @keyframes floating { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* ANIMACIÓN DE ENTRADA ÉPICA */
+@keyframes epic-entrance {
+  0% { transform: scale(0.3); filter: brightness(10) blur(10px); opacity: 0; }
+  40% { transform: scale(1.15) rotate(5deg); filter: brightness(5) blur(0); opacity: 1; }
+  70% { transform: scale(0.95) rotate(-3deg); filter: brightness(2); }
+  100% { transform: scale(1) rotate(0deg); filter: brightness(1) drop-shadow(0 0 20px var(--primary)); opacity: 1; }
+}
+
+.epic-enter {
+  animation: epic-entrance 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
