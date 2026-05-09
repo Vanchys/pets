@@ -74,7 +74,7 @@ function confirmSelection() {
   setTimeout(() => {
     uMsg.style.opacity = '0'; // Inicia desvanecimiento lento
     setTimeout(() => { uMsg.style.display = 'none'; }, 1500); 
-  }, 2000);
+  }, 1000);
   
   render();
 }
