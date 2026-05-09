@@ -184,6 +184,21 @@ function completeTrip() {
       void img.offsetWidth; // Trigger reflow
       img.classList.add('epic-enter');
     }
+    
+    // HITO 56 VIAJES: ANUNCIO DIFERIDO
+    if (totalTrips === 56) {
+      setTimeout(() => {
+        const mMsg = document.getElementById('milestone-msg');
+        mMsg.style.display = 'block';
+        mMsg.style.opacity = '1';
+        
+        setTimeout(() => {
+          mMsg.style.opacity = '0';
+          setTimeout(() => { mMsg.style.display = 'none'; }, 1000);
+        }, 1000);
+      }, 5000);
+    }
+
     render();
   }
 }
