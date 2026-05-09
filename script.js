@@ -69,8 +69,21 @@ function cancelSelection() {
 function openOverlay(type) {
   const data = petData[viewingGroup];
   const overlay = document.getElementById('full-overlay');
-  document.getElementById('overlay-title').innerText = type === 'lore' ? 'HISTORIA' : 'EL ORÁCULO';
-  document.getElementById('overlay-text').innerText = type === 'lore' ? data.lore : data.oracle;
+  
+  // Limpiar clases previas
+  overlay.classList.remove('overlay-lore', 'overlay-oracle');
+  
+  // Aplicar fondo según tipo
+  if (type === 'lore') {
+    overlay.classList.add('overlay-lore');
+    document.getElementById('overlay-title').innerText = 'HISTORIA';
+    document.getElementById('overlay-text').innerText = data.lore;
+  } else {
+    overlay.classList.add('overlay-oracle');
+    document.getElementById('overlay-title').innerText = 'EL ORÁCULO';
+    document.getElementById('overlay-text').innerText = data.oracle;
+  }
+  
   overlay.style.display = 'flex';
 }
 

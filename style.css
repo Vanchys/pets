@@ -82,6 +82,14 @@ body {
 .full-screen-overlay h2 { color: var(--secondary); margin-bottom: 20px; font-weight: 900; letter-spacing: 2px; text-transform: uppercase; font-size: 24px; }
 .full-screen-overlay p { font-size: 17px; line-height: 1.8; color: #eee; margin-bottom: 40px; font-weight: 300; text-align: left; }
 
+/* VARIANTES DE FONDO PREMIUM */
+.overlay-lore {
+  background: linear-gradient(180deg, #2d1b4d 0%, #000 100%) !important;
+}
+.overlay-oracle {
+  background: linear-gradient(180deg, #3d2b00 0%, #000 100%) !important;
+}
+
 .btn-close-overlay {
   padding: 15px 40px; background: var(--primary); color: white;
   border: none; border-radius: 100px; font-weight: 800; cursor: pointer;
