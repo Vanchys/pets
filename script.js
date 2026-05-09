@@ -195,8 +195,8 @@ function completeTrip() {
         setTimeout(() => {
           mMsg.style.opacity = '0';
           setTimeout(() => { mMsg.style.display = 'none'; }, 1000);
-        }, 1000);
-      }, 5000);
+        }, 2000);
+      }, 7000);
     }
 
     render();
