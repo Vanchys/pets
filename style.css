@@ -168,6 +168,30 @@ body {
   box-shadow: 0 0 50px rgba(255,215,0,0.4);
 }
 
+/* BOTÓN DE VIAJE ANIMADO */
+.btn-trip {
+  width: 100%; padding: 18px; border-radius: 20px;
+  background: linear-gradient(135deg, var(--primary), #9d50bb);
+  color: white; border: none; font-weight: 900; font-size: 16px;
+  cursor: pointer; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 30px rgba(124, 77, 255, 0.4);
+  text-transform: uppercase; letter-spacing: 1px;
+  animation: pulse-trip 2s infinite;
+}
+
+.btn-trip:disabled {
+  background: #1a1a1a; color: #888; cursor: pointer;
+  border: 1px solid var(--secondary);
+  animation: pulse-trip 2s infinite;
+  opacity: 0.9;
+}
+
+@keyframes pulse-trip {
+  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124, 77, 255, 0.7); }
+  70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(124, 77, 255, 0); }
+  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(124, 77, 255, 0); }
+}
+
 /* MENSAJE DE DESBLOQUEO PREMIUM */
 .popup-msg {
   position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -176,6 +200,8 @@ body {
   color: white; font-weight: 900; font-size: 18px; display: none;
   width: 85%; backdrop-filter: blur(15px);
   box-shadow: 0 0 40px rgba(124, 77, 255, 0.5);
+  transition: opacity 1.5s ease;
+  opacity: 0;
 }
 
 @keyframes popInOut {

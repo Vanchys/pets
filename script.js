@@ -69,7 +69,12 @@ function confirmSelection() {
   // Mostrar mensaje de desbloqueo
   const uMsg = document.getElementById('unlock-msg');
   uMsg.style.display = 'block';
-  setTimeout(() => uMsg.style.display = 'none', 3500);
+  uMsg.style.opacity = '1';
+  
+  setTimeout(() => {
+    uMsg.style.opacity = '0'; // Inicia desvanecimiento lento
+    setTimeout(() => { uMsg.style.display = 'none'; }, 1500); 
+  }, 3000);
   
   render();
 }
