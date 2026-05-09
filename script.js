@@ -65,6 +65,12 @@ function confirmSelection() {
   activeGroup = viewingGroup;
   registry[activeGroup].unlocked = true;
   document.getElementById('confirm-modal').style.display = 'none';
+  
+  // Mostrar mensaje de desbloqueo
+  const uMsg = document.getElementById('unlock-msg');
+  uMsg.style.display = 'block';
+  setTimeout(() => uMsg.style.display = 'none', 3500);
+  
   render();
 }
 
