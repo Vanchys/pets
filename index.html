@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NUVA Pets - Evolution</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <div id="phone-shell">
+    <div class="ambient-light"></div>
+
+    <!-- MENSAJE EMERGENTE DE REGALO -->
+    <div id="free-trip-msg">
+      ¡FELICIDADES!<br>
+      <span style="font-size: 14px; opacity: 0.8;">TIENES UN VIAJE GRATIS</span>
+    </div>
+
+    <div id="full-overlay" class="full-screen-overlay">
+      <h2 id="overlay-title">TÍTULO</h2>
+      <p id="overlay-text">Texto aquí...</p>
+      <button class="btn-close-overlay" onclick="closeOverlay()">CERRAR</button>
+    </div>
+
+    <div id="confirm-modal">
+      <div style="background:#111; border:1px solid #7c4dff; padding:25px; border-radius:30px; width:100%;">
+        <h3 style="color:white; margin-bottom:20px; font-size:16px;">¿Quieres desbloquear este personaje?</h3>
+        <button onclick="confirmSelection()" style="width:100%; padding:15px; background:#7c4dff; color:white; border:none; border-radius:12px; font-weight:800; margin-bottom:10px; cursor:pointer;">SÍ, DESBLOQUEAR</button>
+        <button onclick="cancelSelection()" style="width:100%; padding:15px; background:#222; color:white; border:none; border-radius:12px; font-weight:800; cursor:pointer;">NO, CANCELAR</button>
+      </div>
+    </div>
+
+    <div class="app-ui">
+      <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
+        <span style="font-weight:900; font-size:18px; letter-spacing:1px;">NUVA</span>
+        <span id="trip-counter" style="font-weight:900; color:var(--secondary); font-size:14px; letter-spacing:1px;">VIAJES: 0</span>
+        <button id="btn-reset" onclick="resetMascot()" class="btn-reset-icon" title="Reiniciar">↻</button>
+      </header>
+
+      <div class="center-panel">
+        <div class="pet-image-container">
+          <img src="" id="pet-img" class="float">
+        </div>
+        <h2 id="pet-name" style="font-size:24px; font-weight:900; margin: 15px 0 10px 0;"></h2>
+        <div class="fixed-identity">
+          <span style="font-size:8px; color:#00e5ff; font-weight:800;">IDENTIDAD</span>
+          <p id="identity-text" style="font-size:13px; margin-top:5px;"></p>
+        </div>
+        <div class="action-buttons-row" id="btns-row">
+          <button class="btn-action" onclick="openOverlay('lore')">Historia</button>
+          <button class="btn-action" onclick="openOverlay('oracle')">Oráculo</button>
+        </div>
+      </div>
+
+      <div class="group-nav" style="display:flex; justify-content:center; gap:10px; margin-bottom:15px;">
+        <div class="nav-item active" id="nav-a" onclick="handleNavClick('a')">A</div>
+        <div class="nav-item" id="nav-b" onclick="handleNavClick('b')">B</div>
+        <div class="nav-item" id="nav-c" onclick="handleNavClick('c')">C</div>
+        <div class="nav-item" id="nav-d" onclick="handleNavClick('d')">D</div>
+      </div>
+
+      <div class="bottom-panel">
+        <div style="height:4px; width:100%; background:#eee; border-radius:2px; margin-bottom:10px; overflow:hidden;">
+          <div id="progress-bar" style="height:100%; background:#7c4dff; width:20%; transition:0.5s;"></div>
+        </div>
+        <button id="btn-trip" onclick="completeTrip()" class="btn-main">SIGUIENTE VIAJE</button>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
