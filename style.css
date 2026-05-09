@@ -243,8 +243,8 @@ body {
 }
 
 @keyframes shine-brand {
-  from { background-position: -200% center; }
-  to { background-position: 0% center; }
+  0% { background-position: 100% center; }
+  100% { background-position: -100% center; }
 }
 
 @keyframes pulse-brand {
