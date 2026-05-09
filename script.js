@@ -185,9 +185,9 @@ function render() {
   const g = registry[viewingGroup];
   const data = petData[viewingGroup];
 
-  // Desbloqueo botón Próximamente
+  // Desbloqueo botón + PERSONAJES
   const upBtn = document.getElementById('btn-upcoming');
-  if (totalTrips >= 50) {
+  if (totalTrips >= 56) {
     upBtn.style.display = 'block';
   } else {
     upBtn.style.display = 'none';
