@@ -178,9 +178,20 @@ function resetMascot() {
   render();
 }
 
+function openUpcoming() { document.getElementById('upcoming-overlay').style.display = 'flex'; }
+function closeUpcoming() { document.getElementById('upcoming-overlay').style.display = 'none'; }
+
 function render() {
   const g = registry[viewingGroup];
   const data = petData[viewingGroup];
+
+  // Desbloqueo botón Próximamente
+  const upBtn = document.getElementById('btn-upcoming');
+  if (totalTrips >= 50) {
+    upBtn.style.display = 'block';
+  } else {
+    upBtn.style.display = 'none';
+  }
 
   document.getElementById('pet-name').innerText = data.name;
   document.getElementById('pet-img').src = `${viewingGroup}${g.level}-removebg-preview.png`;

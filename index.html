@@ -24,6 +24,19 @@
       <button class="btn-close-overlay" onclick="closeOverlay()">CERRAR</button>
     </div>
 
+    <!-- Overlay para Temporada 1 -->
+    <div id="upcoming-overlay" class="full-screen-overlay overlay-season">
+      <h2 style="color: #00ff00; margin-bottom: 25px;">🟢 TEMPORADA 1</h2>
+      <div class="season-content">
+        <div class="season-cat"><h3>🌱 Plantas</h3><p>Nopi | Robur | Vira</p></div>
+        <div class="season-cat"><h3>👷 Humanos</h3><p>Ferro | Chispa | Maia</p></div>
+        <div class="season-cat"><h3>👾 Monstruos</h3><p>Mono | Glop | Krag</p></div>
+        <div class="season-cat"><h3>🔥 Místicos</h3><p>Pyro | Aqua | Terra</p></div>
+        <div class="season-cat"><h3>🧬 Fusiones</h3><p>Vayro | Magnus | Verdax</p></div>
+      </div>
+      <button class="btn-close-overlay" onclick="closeUpcoming()" style="background: #00ff00; color: black; margin-top: auto;">ENTENDIDO</button>
+    </div>
+
     <div id="confirm-modal">
       <div style="background:#111; border:1px solid #7c4dff; padding:25px; border-radius:30px; width:100%;">
         <h3 style="color:white; margin-bottom:20px; font-size:16px;">¿Quieres desbloquear este personaje?</h3>
@@ -35,6 +48,7 @@
     <div class="app-ui">
       <header style="display:flex; justify-content:space-between; align-items:center; margin-bottom:15px;">
         <span style="font-weight:900; font-size:18px; letter-spacing:1px;">NUVA</span>
+        <button id="btn-upcoming" class="btn-upcoming" style="display: none;" onclick="openUpcoming()">PRÓXIMAMENTE</button>
         <span id="trip-counter" style="font-weight:900; color:var(--secondary); font-size:14px; letter-spacing:1px;">VIAJES: 0</span>
         <button id="btn-reset" onclick="resetMascot()" class="btn-reset-icon" title="Reiniciar">↻</button>
       </header>
