@@ -46,17 +46,17 @@ body {
 
 .center-panel {
   flex: 1; display: flex; flex-direction: column; align-items: center;
-  background: var(--glass); border-radius: 40px; padding: 25px;
+  background: var(--glass); border-radius: 40px; padding: 15px;
   border: 1px solid rgba(255,255,255,0.1); justify-content: center;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
-.pet-image-container { height: 220px; display: flex; align-items: center; justify-content: center; width: 100%; }
+.pet-image-container { height: 160px; display: flex; align-items: center; justify-content: center; width: 100%; }
 .pet-image-container img { max-height: 100%; filter: drop-shadow(0 0 15px var(--primary)); transition: transform 0.4s; }
 
 .fixed-identity {
-  width: 100%; padding: 15px; border-radius: 12px; background: rgba(0,0,0,0.3);
-  margin-top: 15px; text-align: center; border: 1px solid rgba(255,255,255,0.05);
+  width: 100%; padding: 10px; border-radius: 12px; background: rgba(0,0,0,0.3);
+  margin-top: 5px; text-align: center; border: 1px solid rgba(255,255,255,0.05);
 }
 
 .action-buttons-row {
@@ -170,7 +170,7 @@ body {
 
 /* BOTÓN DE VIAJE ULTRA-PREMIUM */
 .btn-trip {
-  width: 100%; padding: 20px; border-radius: 25px;
+  width: 100%; padding: 15px; border-radius: 25px;
   background: linear-gradient(135deg, var(--primary), #9d50bb, var(--primary));
   background-size: 200% auto;
   color: white; border: 1px solid rgba(255,255,255,0.3);
@@ -303,4 +303,50 @@ body {
 @keyframes pulse-brand {
   0%, 100% { filter: drop-shadow(0 0 2px rgba(124, 77, 255, 0.5)); transform: scale(1); }
   50% { filter: drop-shadow(0 0 10px rgba(124, 77, 255, 0.8)); transform: scale(1.05); }
+}
+
+/* --- NUEVOS ESTILOS PARA INVENTARIO Y ALIMENTACION --- */
+.inventory-panel {
+  display: flex; justify-content: center; gap: 15px; margin-bottom: 10px;
+  background: var(--glass); padding: 10px; border-radius: 20px; border: 1px solid rgba(255,255,255,0.1);
+}
+
+.inv-item {
+  display: flex; align-items: center; gap: 5px; font-weight: 900; font-size: 16px; color: white;
+}
+.inv-btn {
+  cursor: pointer; transition: transform 0.2s, background 0.2s; padding: 5px 10px; border-radius: 10px;
+}
+.inv-btn:hover {
+  background: rgba(124, 77, 255, 0.3); transform: scale(1.1);
+}
+.inv-btn:active { transform: scale(0.95); }
+
+.dna-item { color: #00ff00; }
+
+.btn-feed {
+  flex: 1; padding: 10px; border-radius: 12px; border: 1px solid var(--primary);
+  background: rgba(124, 77, 255, 0.2); color: white; font-size: 12px; font-weight: 800; cursor: pointer; transition: 0.3s;
+}
+.btn-feed:hover { background: var(--primary); }
+
+.btn-feed-dna { border-color: #00ff00; background: rgba(0, 255, 0, 0.1); color: #00ff00; }
+.btn-feed-dna:hover { background: #00ff00; color: black; }
+
+.btn-feed:disabled { opacity: 0.3; cursor: not-allowed; border-color: #555; background: transparent; }
+
+.drop-msg {
+  position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%);
+  font-size: 30px; font-weight: 900; color: white; text-shadow: 0 0 20px var(--secondary);
+  opacity: 0; pointer-events: none; z-index: 500;
+  transition: all 0.5s ease-out;
+}
+.drop-msg.show {
+  animation: floatUp 1.5s forwards;
+}
+
+@keyframes floatUp {
+  0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+  20% { opacity: 1; transform: translate(-50%, -80%) scale(1.5); }
+  100% { opacity: 0; transform: translate(-50%, -150%) scale(1); }
 }
